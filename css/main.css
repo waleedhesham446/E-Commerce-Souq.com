@@ -1,0 +1,1393 @@
+/* Variables */
+:root {
+    --main-color: #008BFF;
+    --sec-color: #ea005b;
+}
+
+/* Global */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    position: fixed;
+    background-color: white;
+    z-index: 2;
+}
+
+/* Upper-Bar */
+header .upper-bar {
+    background-color: #232f3e;
+    height: 30px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Mony-Treatement */
+header .upper-bar .mony-treatement {
+    display: flex;
+    align-items: center;
+    font-size: 0.7857142857rem;
+}
+
+header .upper-bar .mony-treatement li {
+    position: relative;
+    margin-right: 20px;
+}
+
+header .upper-bar .mony-treatement li::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    width: 200px;
+    height: fit-content;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #232f3e;
+    opacity: 0.9;
+    display: none;
+    z-index: 4;
+}
+
+header .upper-bar .mony-treatement li:first-child:before {
+    content: "All orders of 350.00 EGP or more on eligible items across any product category qualify for FREE Shipping.";
+}
+
+header .upper-bar .mony-treatement li:nth-child(2):before {
+    content: "Changed your mind, you can return your product and get a full refund. ";
+}
+
+header .upper-bar .mony-treatement li:last-child:before {
+    content: "Pay for your order in cash at the moment the shipment is delivered to your doorstep.";
+}
+
+header .upper-bar .mony-treatement li::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 65%;
+    border: 10px solid;
+    border-color: transparent transparent #232f3e transparent;
+    opacity: 0.9;
+    display: none;
+}
+
+header .upper-bar .mony-treatement li:hover:before,
+header .upper-bar .mony-treatement li:hover:after {
+    display: block;
+}
+
+header .upper-bar .mony-treatement li a {
+    display: flex;
+    align-items: center;
+    color: white;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+header .upper-bar .mony-treatement li a i {
+    margin-right: 5px;
+}
+
+header .upper-bar .mony-treatement li a p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Site-Details */
+header .upper-bar .site-details {
+    display: flex;
+    align-items: center;
+    font-size: 0.7857142857rem;
+}
+
+header .upper-bar .site-details li {
+    
+}
+
+header .upper-bar .site-details li:not(:last-child) {
+    border-right: 1px solid #777;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+
+header .upper-bar .site-details li a {
+    display: flex;
+    font-size: .8571428571rem;
+    color: white;
+    text-decoration: none;
+}
+
+header .upper-bar .site-details li a img {
+    height: 19px;
+}
+
+/* Search-Bar */
+header .search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Right & Left of Search Box */
+header .search-bar .container.first,
+header .search-bar .container.second {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+/* Left */
+header .search-bar .bars i {
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+header .search-bar .logo {
+    margin-left: 15px;
+}
+
+header .search-bar .logo img {
+    max-width: 100px;
+}
+
+/* Center */
+header .search-bar .search {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+header .search-bar .search input[type="text"] {
+    flex: 1;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 2px 0 2px 10px
+}
+
+header .search-bar .search input[type="text"]:focus {
+    outline: none;
+}
+
+header .search-bar .search button {
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    height: 36px;
+    cursor: pointer;
+    font-size: 1.4em;
+    padding: 0 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Right */
+header .search-bar .container.second {
+    justify-content: flex-end;
+    height: 36px;
+}
+
+header .search-bar .login {
+    position: relative;
+    margin-right: 20px;
+    padding: 5px 20px 5px 4px;
+    border: 1px solid #eee;
+    border-color: transparent;
+}
+
+header .search-bar .login .login-page {
+    color: black;
+    text-decoration: none;
+    font-weight: 300;
+    position: relative;
+}
+
+header .search-bar .login .login-page::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    border: 6px solid;
+    border-color: #ccc transparent transparent transparent;
+}
+
+header .search-bar .login:hover .login-page:before {
+    border-color: #aaa transparent transparent transparent;
+}
+
+header .search-bar .login:hover {
+    border-color: #e1e1e1 #e1e1e1 transparent #e1e1e1;
+}
+
+header .search-bar .login .box {
+    position: absolute;
+    right: -1px;
+    top: 100%;
+    width: 200px;
+    text-align: center;   
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-top-color: transparent;
+    display: none;
+    z-index: 2;
+}
+
+header .search-bar .login:hover .box {
+    display: block;
+}
+
+header .search-bar .login .box .login-part {
+    margin-top: 20px;
+}
+
+header .search-bar .login .box .login-part a:first-child {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+header .search-bar .login .box .login-part p {
+    font-size: 13px;
+    margin: 7px 7px 0
+}
+
+header .search-bar .login .box .login-part a:last-child {
+    margin: 0 auto;
+    padding: 0 5px 5px;
+    width: fit-content;
+    display: block;
+    font-size: 14px;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+header .search-bar .login .box ul.links {
+    margin-top: 10px;
+}
+
+header .search-bar .login .box ul.links li {
+    border-top: 1px solid #e1e1e1;
+    text-align: left;
+}
+
+header .search-bar .login .box ul.links li:hover {
+    background-color: #e1e1e1;
+}
+
+header .search-bar .login .box ul.links li a {
+    color: var(--main-color);
+    padding: 15px 0 15px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.container.second .cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+}
+
+.container.second i {
+    color: var(--main-color);
+    font-size: 1.4em;
+    position: relative;
+}
+
+.container.second i::after {
+    content: attr(data-count);
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 15px;
+}
+
+.container.second .cart p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Nav Bar */
+header .nav-bar {
+    background-color: #e1e1e1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header .nav-bar li {
+    color: #232f3e;
+}
+
+header .nav-bar li a {
+    display: block;
+    padding: 10px;
+    font-size: 15px;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+}
+
+header .nav-bar > li:nth-child(2) > a {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+header .nav-bar li:nth-child(2) > a span {
+    font-weight: 900;
+}
+
+header .nav-bar > li:nth-child(2):hover {
+    background-color: #232f3e;
+    color: white;
+    transition: .2s;
+}
+
+header .nav-bar .tab > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: 0.2s;
+}
+
+header .nav-bar .tab:hover a::before {
+    width: 100%;
+}
+
+header .nav-bar .tab:hover {
+    background-color: white;
+    transition: .2s;
+}
+
+header .nav-bar li:nth-child(3) a::before {
+    background-color: orangered
+}
+
+header .nav-bar > li:nth-child(3):hover {
+    color: orangered;
+}
+
+/* Fashion-Bar  */
+header .nav-bar li:nth-child(2) .fashion {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #232f3e;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 10px;
+    display: none;
+}
+
+header .nav-bar li:nth-child(2):hover .fashion {
+    display: flex;
+} 
+
+header .nav-bar li:nth-child(2) .fashion li {
+    width: 10%;
+}
+
+header .nav-bar li:nth-child(2) .fashion li a {
+    color: white;
+    padding: 10px 10px;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+    position: relative;
+}
+
+header .nav-bar li:nth-child(2) .fashion > li:hover > a {
+    color: var(--sec-color);
+    font-weight: normal;
+}
+
+header .nav-bar li:nth-child(2) .fashion > li > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--sec-color);
+    transition: 0.2s;
+}
+
+header .nav-bar li:nth-child(2) .fashion li:hover a::before {
+    width: 100%;
+}
+
+/* Lists */
+header .nav-bar li:nth-child(2) .fashion li .list {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 96%;
+    padding: 0 0 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: #232f3e;
+    display: none;
+}
+
+header .nav-bar li:nth-child(2) .fashion li:hover .list {
+    display: flex;
+}
+
+header .nav-bar li:nth-child(2) .fashion li .list p{
+    color: var(--sec-color);
+    width: fit-content;
+    margin: 5px auto;
+}
+
+/* Fisrt-List */
+header .nav-bar li:nth-child(2) .fashion li:first-child .list li,
+header .nav-bar li:nth-child(2) .fashion li:first-child .list li a {
+    display: block;
+    padding: 0;
+    width: 200px;
+}
+
+header .nav-bar li:nth-child(2) .fashion li .list li a img {
+    max-width: 100%;
+}
+
+/* Second-List */
+header .nav-bar li:nth-child(2) .fashion li:not(:first-child) .list li,
+header .nav-bar li:nth-child(2) .fashion li:not(:first-child) .list li a {
+    display: block;
+    padding: 0;
+    width: 200px;
+    font-weight: normal;
+}
+
+.big-img,
+.big-img a {
+    height: 355px;
+}
+
+.big-img a img {
+    max-height: 99%;
+}
+
+header .nav-bar li:nth-child(2) .fashion li:not(:first-child) .list li:first-child {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+header .nav-bar li:nth-child(2) .fashion li:not(:first-child) .list li:first-child div div:first-child {
+    margin-bottom: 30px;
+}
+
+header .nav-bar li:nth-child(2) .fashion li:not(:first-child) .list li:first-child div ul li {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+header .nav-bar li:nth-child(2) .fashion li:not(:first-child) .list li div ul li a {
+    margin: 0  auto 5px;
+    width: fit-content;
+}
+
+
+header .nav-bar li:nth-child(2) .fashion li:nth-child(8) .list {
+    flex-direction: row;
+}
+
+.footwear-imgs {
+    margin-right: 20px;
+}
+
+/* Supermarket */
+header .nav-bar li:nth-child(3) .supermarket {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-left: 40px;
+    display: none;
+}
+
+
+header .nav-bar li:nth-child(3):hover .supermarket {
+    display: flex;
+} 
+
+header .nav-bar li:nth-child(3):hover .supermarket li {
+    margin-right: 15px;
+}
+header .nav-bar li:nth-child(3):hover .supermarket li a {
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+} 
+
+header .nav-bar li:nth-child(3) .supermarket li:hover a {
+    color: orangered;
+}
+
+header .nav-bar li:nth-child(3) .supermarket > li:first-child > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: orangered;
+    transition: 0.2s;
+}
+
+header .nav-bar li:nth-child(3) .supermarket li:first-child:hover > a::before {
+    width: 100%;
+}
+
+header .nav-bar li:nth-child(3) .supermarket > li:first-child .forget {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 96%;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    display: none;
+    transition: 0.2s;
+}
+
+header .nav-bar li:nth-child(3) .supermarket > li:first-child:hover .forget {
+    display: flex;
+}
+
+header .nav-bar li:nth-child(3) .supermarket > li:first-child .forget li {
+    margin: 0;
+}
+
+header .nav-bar li:nth-child(3) .supermarket > li:first-child .forget li a {
+    text-align: center;
+    display: block;
+}
+
+header .nav-bar li:nth-child(3) .supermarket > li:first-child .forget li a img {
+    max-width: 100%;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 96%;
+    background-color: #232f3e;
+    display: flex;
+    justify-content: space-evenly;
+    transition: 0.2s;
+    display: none;
+}
+
+header .nav-bar li:nth-child(4):hover .mob-tab {
+    display: flex;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab > li:first-child {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-weight: normal;
+    flex: 1;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab li:first-child div h3 {
+    font-size: 16px;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab li:first-child div ul li {
+    padding: 0;
+    width: fit-content;
+    margin: 0 auto 10px;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab li:first-child div ul li a {
+    color: white;
+    font-weight: normal;
+    display: block;
+    width: fit-content;
+    padding: 0 !important;
+    margin: 0;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab li:first-child div ul li h4 {
+    width: fit-content;
+    margin: 0 auto 5px;
+}
+
+header .nav-bar li:nth-child(4) .mob-tab li:not(:first-child) {
+    margin-right: 10px;
+}
+
+
+header .nav-bar li:nth-child(6) .list,
+header .nav-bar li:nth-child(7) .list,
+header .nav-bar li:nth-child(9) .list  {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 96%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: 0.2s;
+    display: none;
+}
+
+header .nav-bar li:nth-child(6):hover .list,
+header .nav-bar li:nth-child(7):hover .list,
+header .nav-bar li:nth-child(9):hover .list  {
+    display: flex;
+}
+
+header .nav-bar li:nth-child(6) .list > li,
+header .nav-bar li:nth-child(7) .list > li,
+header .nav-bar li:nth-child(9) .list > li  {
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 30%;
+}
+
+header .nav-bar li:nth-child(6) .list > li .image,
+header .nav-bar li:nth-child(7) .list > li .image,
+header .nav-bar li:nth-child(9) .list > li .image  {
+    margin-right: 10px;
+}
+
+header .nav-bar li:nth-child(6) .list > li .image a,
+header .nav-bar li:nth-child(7) .list > li .image a,
+header .nav-bar li:nth-child(9) .list > li .image a  {
+    padding: 0;
+}
+
+header .nav-bar li:nth-child(6) .list li .details h3,
+header .nav-bar li:nth-child(7) .list li .details h3,
+header .nav-bar li:nth-child(9) .list li .details h3  {
+    font-size: 16px;
+    color: var(--main-color);
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+header .nav-bar li:nth-child(6) .list li .details h3 a,
+header .nav-bar li:nth-child(7) .list li .details h3 a,
+header .nav-bar li:nth-child(9) .list li .details h3 a  {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+}
+
+header .nav-bar li:nth-child(6) .list li .details ul li,
+header .nav-bar li:nth-child(7) .list li .details ul li,
+header .nav-bar li:nth-child(9) .list li .details ul li  {
+    margin-bottom: 10px;
+}
+
+header .nav-bar li:nth-child(6) .list li .details ul li a,
+header .nav-bar li:nth-child(7) .list li .details ul li a,
+header .nav-bar li:nth-child(9) .list li .details ul li a  {
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    color: #777;
+}
+
+header .nav-bar li:nth-child(6) .list li .details ul li:hover a,
+header .nav-bar li:nth-child(7) .list li .details ul li:hover a,
+header .nav-bar li:nth-child(9) .list li .details ul li:hover a  {
+    color: black;
+}
+
+header .nav-bar li:nth-child(8) .list {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 96%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: 0.2s;
+    display: none;
+}
+
+header .nav-bar li:nth-child(8):hover .list {
+    display: flex;
+} 
+
+header .nav-bar li:nth-child(8) .list .types {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header .nav-bar li:nth-child(8) .list .types > li {
+    display: flex;
+    width: 25%;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+header .nav-bar li:nth-child(8) .list .types > li img {
+    
+    width: 130px;
+}
+
+header .nav-bar li:nth-child(8) .list .types > li .text {
+    
+}
+
+header .nav-bar li:nth-child(8) .list .types > li .text h3 {
+    margin: 10px 0;
+    padding: 0;
+}
+
+header .nav-bar li:nth-child(8) .list .types > li .text h3 a {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+}
+
+header .nav-bar li:nth-child(8) .list .types > li .text ul {
+    
+}
+
+header .nav-bar li:nth-child(8) .list .types > li .text ul li {
+
+}
+
+header .nav-bar li:nth-child(8) .list .types > li .text ul li a {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+header .nav-bar li:nth-child(8) .list .marks {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header .nav-bar li:nth-child(8) .list .marks li {
+    margin-right: 10px;
+}
+
+header .nav-bar li:nth-child(8) .list .marks li a {
+    padding: 0;
+}
+
+header .nav-bar li:nth-child(10) .list,
+header .nav-bar li:nth-child(11) .list,
+header .nav-bar li:nth-child(12) .list {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 96%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: 0.2s;
+    display: none;
+}
+
+header .nav-bar li:nth-child(10):hover .list,
+header .nav-bar li:nth-child(11):hover .list,
+header .nav-bar li:nth-child(12):hover .list {
+    display: flex;
+}
+
+header .nav-bar li:nth-child(10) .list .text,
+header .nav-bar li:nth-child(12) .list .text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 45%;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li,
+header .nav-bar li:nth-child(12) .list .text > li {
+    padding: 0;
+    margin: 0;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li .box,
+header .nav-bar li:nth-child(11) .list .main > li .text,
+header .nav-bar li:nth-child(12) .list .text > li .box {
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li .box h3,
+header .nav-bar li:nth-child(11) .list .main > li .text h3,
+header .nav-bar li:nth-child(12) .list .text > li .box h3 {
+    padding: 0;
+    margin: 0 0 12px;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li .box h3 a,
+header .nav-bar li:nth-child(11) .list .main > li .text h3 a,
+header .nav-bar li:nth-child(12) .list .text > li .box h3 a {
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    color: var(--main-color);
+}
+
+
+header .nav-bar li:nth-child(10) .list .text > li .box ul,
+header .nav-bar li:nth-child(11) .list .main > li .text ul,
+header .nav-bar li:nth-child(12) .list .text > li .box ul {
+    padding: 0;
+    margin: 0;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li .box ul li,
+header .nav-bar li:nth-child(11) .list .main > li .text ul li,
+header .nav-bar li:nth-child(12) .list .text > li .box ul li {
+    padding: 0;
+    margin: 0 0 8px;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li .box ul li a,
+header .nav-bar li:nth-child(11) .list .main > li .text ul li a,
+header .nav-bar li:nth-child(12) .list .text > li .box ul li a {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+    width: fit-content;
+    color: #777;
+}
+
+header .nav-bar li:nth-child(10) .list .text > li .box ul li:hover a,
+header .nav-bar li:nth-child(11) .list .main > li .text ul li:hover a,
+header .nav-bar li:nth-child(12) .list .text > li .box ul li:hover a {
+    color: black;
+}
+
+
+header .nav-bar li:nth-child(10) .list .images,
+header .nav-bar li:nth-child(12) .list .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 30%;
+}
+
+header .nav-bar li:nth-child(10) .list .images li:first-child,
+header .nav-bar li:nth-child(12) .list .images li:first-child {
+    width: 100%;
+}
+
+header .nav-bar li:nth-child(10) .list .images li:not(:first-child) {
+    width: 32%;
+}
+
+header .nav-bar li:nth-child(12) .list .images li:not(:first-child) {
+    width: 45%;
+}
+
+header .nav-bar li:nth-child(11) .list .main {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .nav-bar li:nth-child(11) .list {
+    flex-direction: column;
+}
+
+header .nav-bar li:nth-child(11) .list .main > li {
+    display: flex;
+}
+
+header .nav-bar li:nth-child(11) .list .main > li .text h3 {
+    margin-top: 8px;
+}
+
+/* Main */
+main {
+    position: relative;
+    top: 130px;
+    margin-bottom: 50px;
+}
+
+main .container,
+footer .container {
+    padding: 20px;
+}
+
+main .landing {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+main .landing .offers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 70%;
+    position: relative;
+}
+
+main .landing .offers a {
+    display: block;
+    width: fit-content;
+}
+
+main .landing .offers a:last-child {
+    width: fit-content;
+}
+
+main .landing .offers a.arrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 30px;
+    z-index: 5;
+}
+
+main .landing .offers a.arrow:hover {
+    color: black;
+}
+
+main .landing .offers a.arrow.left {
+    left: 0;
+    transform: translateX(40%);
+}
+
+main .landing .offers a.arrow.right {
+    right: 0;
+}
+
+main .landing .offers a:last-child img {
+    margin-bottom: 0;
+}
+
+main .landing .offers a:last-child p {
+    margin: -3px 0 0;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #232f3e;
+    color: white;
+}
+
+main .landing .ads {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .ad {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+main .ad a {
+    flex-basis: 100%;
+}
+
+main .day-ten {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+main .day-ten a {
+    display: flex;
+    flex-basis: 49%;
+    height: fit-content;
+}
+
+main .day-ten a img {
+    max-width: 100%;
+}
+
+main .summer-sale {
+    margin-bottom: 30px;
+}
+
+main .summer-sale .sales a:nth-child(1) {
+    grid-area: one;
+}
+
+main .summer-sale .sales a:nth-child(2) {
+    grid-area: two;
+}
+
+main .summer-sale .sales a:nth-child(3) {
+    grid-area: three;
+}
+
+main .summer-sale .sales a:nth-child(4) {
+    grid-area: four;
+    align-self: self-end;
+}
+
+main .summer-sale .sales a:nth-child(5) {
+    grid-area: five;
+    align-self: self-end;
+}
+
+main .summer-sale .sales {
+    display: grid;
+    grid-template-areas: 
+        "one one two three"
+        "one one four five";
+    column-gap: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 5px;
+    padding: 10px 10px 40px ;
+}
+
+main .summer-sale .sales a {
+    height: fit-content;
+    position: relative;
+}
+
+main .summer-sale .sales a img {
+    max-width: 100%;
+}
+
+main .summer-sale .sales a p {
+    position: absolute;
+    margin: 0;
+    color: black;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main .summer-sale .sales a:first-child p {
+    left: 0;
+    transform: translateX(0);
+    font-size: 25px;
+}
+
+main .summer-sale > a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 7px 10px 11px;
+    border: 1px solid #ccc;
+    width: fit-content;
+    border-bottom-color: transparent;
+    border-top: 5px solid var(--main-color);
+    background-color: white;
+    position: relative;
+    top: 1px;
+}
+
+main .summer-sale > a h3 {
+    margin: 0;
+}
+
+main .sell,
+main .installment,
+main .free-shipping {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+main .sell a,
+main .installment a,
+main .free-shipping a {
+    width: 100%;
+}
+main .sell a img,
+main .installment a img,
+main .free-shipping a img {
+    max-width: 100%;
+}
+
+main .popular-products h2 a {
+    color: black;
+    text-decoration: none;
+}
+
+main .popular-products .slider-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+main .popular-products .slider-wrapper button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 20px;
+}
+
+
+main .popular-products .slider-wrapper button:hover {
+    color: black;
+}
+
+main .popular-products .slider-wrapper button.right {
+    right: 0;
+}
+
+main .popular-products .slider {
+    height: 370px;
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+main .popular-products .slider .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 19%;
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 0 10px -7px;
+}
+
+main .popular-products .slider .product-card img:first-child {
+    max-height: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+main .popular-products .slider .product-card p {
+    margin: 0 0 10px 5px;
+}
+
+main .popular-products .slider .product-card .old-price {
+    color: #777;
+    text-decoration: line-through;
+}
+
+main .popular-products .slider .product-card .new-price {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    width: fit-content;
+}
+
+main .popular-products .slider .product-card .new-price sub {
+    position: absolute;
+    font-size: 16px;
+    bottom: 10px;
+}
+
+main .popular-products .slider .product-card img:last-child {
+    height: 22px;
+    align-self: flex-start;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    top: 130px;
+}
+
+footer section:first-child {
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+footer section:first-child .box h3 {
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+footer section:first-child .box h3.second {
+    margin-top: 20px;
+}
+
+footer section:first-child .box ul li {
+    margin-bottom: 5px;
+}
+
+footer section:first-child .box ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+footer section:first-child .box:last-child {
+    width: 25%;
+}
+
+footer section:first-child .box a.help {
+    background-color: white;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px -7px;
+    margin-bottom: 30px;
+}
+
+footer section:first-child .box a.help i {
+    margin-right: 30px;
+    font-size: 50px;
+    color: #ccc;
+}
+
+footer section:first-child .box a.help .text h3 {
+    color: var(--main-color);
+}
+
+footer section:first-child .box .follow {
+    margin-bottom: 30px;
+}
+
+footer section:first-child .box .follow .icons i,
+footer section:first-child .box .apps .icons i  {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+footer section:first-child .box .follow .icons a:first-child {
+    color: #00acee;
+}
+
+footer section:first-child .box .follow .icons a:nth-child(2) {
+    color: #4267b2;
+}
+
+footer section:first-child .box .follow .icons a:nth-child(3) {
+    color: #db4a39;
+}
+
+footer section:first-child .box .follow .icons a:nth-child(4) {
+    color: red;
+}
+
+footer section:first-child .box .follow .icons a:nth-child(5) {
+    color: var(--main-color);
+}
+
+footer section:first-child .box .follow .icons a:nth-child(6) {
+    color: #E60023;
+}
+
+footer section:first-child .box .apps .icons i {
+    color: var(--main-color);
+}
+
+footer section:last-child {
+    background-color: #ddd;
+    padding: 20px;
+}
+
+footer section:last-child .copyright p {
+    margin-top: 0;
+}
+
+footer section:last-child .links {
+    margin-bottom: 10px;
+}
+
+footer section:last-child .links ul,
+footer section:last-child .countries ul  {
+    display: flex;
+}
+
+
+footer section:last-child .links ul li,
+footer section:last-child .countries ul li  {
+    margin-right: 20px;
+}
+
+footer section:last-child .links ul li a,
+footer section:last-child .countries ul li a  {
+    color: var(--main-color);
+    text-decoration: none;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+    display: block;
+}
+
+footer section:last-child .countries ul li a {
+    font-weight: bold;
+}
